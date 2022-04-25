@@ -84,6 +84,14 @@ Three individual research assistants and I are currently labelling the training 
 The training of the machine learning model will later be updated in the Google Colab code, under the `Classification Model` section.
 
 # Emotion Classification Before and After the Event
-Since
+Since I haven't finished the classification model, I can only examine the emotion display of all Twitter accounts. Like the word clouds, I look at emotions as a whole, and emotions before and after the event. I used the NRCLex package, which is a dictionary-based emotional classification algorithm. Later, I will also consider using a neural-network-based algorithm to achieve higher classification accuracy. The emotion classifications can be reproduced by running the `Emotion Classification Before and After the Event` section in Google Colab code. 
+<br>
+
+The emotion classification generated using all Twitter accounts in the sampled dataset as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emotion_all_count.png" width=60% height=60%> <br>
+The wordcloud generated using all Twitter accounts before (right) and after (left )the death of George Floyd (2020-05-25) are as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_before_percentage.png" width=60% height=60%> 
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_after_percentage.png" width=60% height=60%> 
+<br>
 
 
