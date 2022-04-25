@@ -35,9 +35,11 @@ from nrclex import NRCLex
 # Load and Clean Data
 Here I've collaborated with my friend and have written a scraper for Twitter data. However, it only randomly send back a certain amount of Tweets per day every time I try to make request through the code. For this class project, I just used one output file, which can be found [here](https://drive.google.com/file/d/19umvDYuu1o6uIr3xz1m0qwLay4qgeQ5r/view?usp=sharing). This project can expand the scale by running with multiple output files in the data folder. 
 
-You can pre-process the data by running the `Load and Clean Data` section in Google Colab code. Here removed urls and uninformative information like websites and '@'s. I then splited data into before and after the death of George Floyd. I then tokenized and normalized all tokens. 
+You can pre-process the data by running the `Load and Clean Data` section in Google Colab code. 
 
-The pre-processed data can be found here. 
+In this section, I removed urls and uninformative information like websites and '@'s. I then splited data into before and after the death of George Floyd. I then tokenized and normalized all tweets using the packages developed by Prof. James Evans' research team. 
+
+The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
 
 
