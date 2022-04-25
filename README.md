@@ -1,6 +1,8 @@
 # Overview
 The code and data in this repository is for the Perspectives Class Project, Spring 2022, at the University of Chicago. 
 
+The purpose of this class project is to evaluate the Fringe Effect of Social Movement Organizations (SMOs) in Online Social Movements.
+
 The [code](https://github.com/LuZhang0128/Perspectives/blob/main/Collected%20data%20and%20initial%20findings.ipynb) is written in Python 3.7 on Google Colab. <br>
 All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
 
@@ -48,7 +50,7 @@ In this section, I removed urls and uninformative information like websites and 
 The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1Szztx7LW-QGuvejjWfl9eea9oJ_whtFQ/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
 # Basic Data Description
-In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds.
+In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds. Note that this basic description only get people to know the dataset better, and is not related to the final answer to the research question.
 <br>
 
 The distribution of number of tweets per day is as below: <br>
@@ -56,12 +58,19 @@ The distribution of number of tweets per day is as below: <br>
 This distribution can be reproduced by running the `Basic Plots` section in Google Colab code. 
 <br>
 
+This plot, however, does not necessarily reflect the true distribution of posts. After 2016, the number of posts is more likely to be limited by the algorithm instead of telling us the true trend. If we want to study the trend, [Google Trend](https://trends.google.com/trends/explore?date=2007-12-31%202022-04-24&geo=US&q=blacklivesmatter) is an alternative source.
+<br>
+<br>
+<br>
+
 The wordcloud generated using all tweets in the sampled dataset as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_all.png" width=40% height=40%> <br>
-The wordcloud generated using tweets before the death of George Floyd (2020-05-25) as below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_before.png" width=40% height=40%> <br>
-The wordcloud generated using tweets after the death of George Floyd (2020-05-25) as below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_after.png" width=40% height=40%> <br>
+The wordcloud generated using tweets before (right) and after (left )the death of George Floyd (2020-05-25) are as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_before.png" width=40% height=40%> 
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_after.png" width=40% height=40%> 
+<br>
+
+We can see a slight shift in 
 
 
 # Machine Learning Model for Classification
