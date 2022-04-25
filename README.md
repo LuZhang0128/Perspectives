@@ -2,7 +2,7 @@
 The code and data in this repository is for the Perspectives Class Project, Spring 2022, at the University of Chicago. 
 
 The [code](https://github.com/LuZhang0128/Perspectives/blob/main/Collected%20data%20and%20initial%20findings.ipynb) is written in Python 3.7 on Google Colab. <br>
-All data used in this project, as well as the saved outputs, can be found [here](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
+All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
 
 # Dependencies
 All the dependency (required packages) are in the `Import Packages` section, and is also listed below:
