@@ -50,12 +50,11 @@ In this section, I removed urls and uninformative information like websites and 
 The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1Szztx7LW-QGuvejjWfl9eea9oJ_whtFQ/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
 # Basic Data Description
-In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds. Note that this basic description only get people to know the dataset better, and is not related to the final answer to the research question.
+In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds. The distribution can be reproduced by running the `Basic Plots` section in Google Colab code, and the wordclouds can be reproduced by running the `Word Cloud` section in Google Colab code. Note that this basic description only get people to know the dataset better, and is not related to the final answer to the research question.
 <br>
 
 The distribution of number of tweets per day is as below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png" width=60% height=60%> <br>
-This distribution can be reproduced by running the `Basic Plots` section in Google Colab code. 
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png" width=60% height=60%>
 <br>
 
 This plot, however, does not necessarily reflect the true distribution of posts. After 2016, the number of posts is more likely to be limited by the algorithm instead of telling us the true trend. If we want to study the trend, [Google Trend](https://trends.google.com/trends/explore?date=2007-12-31%202022-04-24&geo=US&q=blacklivesmatter) is an alternative source.
