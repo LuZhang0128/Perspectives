@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/485132738.svg)](https://zenodo.org/badge/latestdoi/485132738)
+
 # Overview
 The code and data in this repository is for the Perspectives Class Project, Spring 2022, at the University of Chicago. 
 
