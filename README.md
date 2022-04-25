@@ -54,8 +54,10 @@ I will train a supervised machine learning model to classify all Twitter account
 3) Social Movement Activists
 4) Other Individuals
 
-Three individual research assistants and I are currently labelling the training dataset. The manually labelled data can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Re-t0Tc7OLDYzt5cJWZcztvwllyMw3mzOWhXoOYnnQM/edit?usp=sharing). One Twitter account will be at least coded by two people. Any discrepancies will be checked and resolved by a thrid people. 
+Three individual research assistants and I are currently labelling the training dataset. The manually labelled data (in progress) can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Re-t0Tc7OLDYzt5cJWZcztvwllyMw3mzOWhXoOYnnQM/edit?usp=sharing). One Twitter account will be at least coded by two people. Any discrepancies will be checked and resolved by a thrid people. 
 
+The training of the machine learning model will later be updated in the Google Colab code, under the `Classification Model` section.
 
+# 
 
 
