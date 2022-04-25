@@ -64,7 +64,7 @@ This plot, however, does not necessarily reflect the true distribution of posts.
 ### WordClouds
 The wordcloud generated using all tweets in the sampled dataset as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_all.png" width=40% height=40%> <br>
-The wordcloud generated using tweets before (right) and after (left )the death of George Floyd (2020-05-25) are as below: <br>
+The wordcloud generated using tweets before (right) and after (left)the death of George Floyd (2020-05-25) are as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_before.png" width=40% height=40%> 
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_after.png" width=40% height=40%> 
 <br>
@@ -89,9 +89,10 @@ Since I haven't finished the classification model, I can only examine the emotio
 
 The emotion classification generated using all Twitter accounts in the sampled dataset as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emotion_all_count.png" width=60% height=60%> <br>
-The wordcloud generated using all Twitter accounts before (right) and after (left )the death of George Floyd (2020-05-25) are as below: <br>
+The wordcloud generated using all Twitter accounts before (up) and after (down)the death of George Floyd (2020-05-25) are as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_before_percentage.png" width=60% height=60%> 
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_after_percentage.png" width=60% height=60%> 
 <br>
 
+From the plots above, we can see that both the percentage of `fear` words and `anger` words decrease after the death of George Floyd. This finding is counterintuitive and is different from Bail's conclusion about Fringe Effect, that organizations tend to display fearful and angry words to attract public's attention). After further splitting the accounts, I want to see if this emotion classification results will be different for Social Movement Organization (SMO), Other Organization, Social Movement Activists, and Other Individuals.
 
