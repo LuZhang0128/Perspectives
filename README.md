@@ -1,7 +1,7 @@
 # Overview
 The code and data in this repository is for the Perspectives Class Project, Spring 2022, at the University of Chicago. 
 
-The purpose of this class project is to evaluate the Fringe Effect of Social Movement Organizations (SMOs) in Online Social Movements.
+The purpose of this class project is to evaluate the Fringe Effect of Social Movement Organizations (SMOs) in Online Social Movements. More specifically, I want to study the BlackLivesMatter movement, and see how SMOs' popularies and display of emotion changed after the death of George Floyd.
 
 The [code](https://github.com/LuZhang0128/Perspectives/blob/main/Collected%20data%20and%20initial%20findings.ipynb) is written in Python 3.7 on Google Colab. <br>
 All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
@@ -70,7 +70,7 @@ The wordcloud generated using tweets before (right) and after (left )the death o
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_after.png" width=40% height=40%> 
 <br>
 
-We can see a slight shift in 
+It is interesting to see words such as "wildhorse," "wild," "horse," and "land" in the first word cloud, and not in the second one. This shift indicates a slight change in topic before and after the identified event (death of George Floyd). It also shows that I'm on the right track.
 
 
 # Machine Learning Model for Classification
