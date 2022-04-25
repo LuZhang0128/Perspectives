@@ -98,3 +98,6 @@ The wordcloud generated using all Twitter accounts before (up) and after (down)t
 
 From the plots above, we can see that both the percentage of `fear` words and `anger` words decrease after the death of George Floyd. This finding is counterintuitive and is different from Bail's conclusion about Fringe Effect, that organizations tend to display fearful and angry words to attract public's attention). After further splitting the accounts, I want to see if this emotion classification results will be different for Social Movement Organization (SMO), Other Organization, Social Movement Activists, and Other Individuals.
 
+# Cite this Repository
+You can cite this repository via the doi on the very top of the README file.
+
