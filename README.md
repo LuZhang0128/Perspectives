@@ -48,11 +48,21 @@ In this section, I removed urls and uninformative information like websites and 
 The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1Szztx7LW-QGuvejjWfl9eea9oJ_whtFQ/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
 # Basic Data Description
-In this sampled dataset, there are in total 123517 observations. 
+In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds.
 <br>
 
-The distribution of number of tweets per day is as below:
-![](https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png | width=100)
+The distribution of number of tweets per day is as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png" width=60% height=60%> <br>
+This distribution can be reproduced by running the `Basic Plots` section in Google Colab code. 
+<br>
+
+The wordcloud generated using all tweets in the sampled dataset as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_all.png" width=40% height=40%> <br>
+The wordcloud generated using tweets before the death of George Floyd (2020-05-25) as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_before.png" width=40% height=40%> <br>
+The wordcloud generated using tweets after the death of George Floyd (2020-05-25) as below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/wordcloud_after.png" width=40% height=40%> <br>
+
 
 # Machine Learning Model for Classification
 I will train a supervised machine learning model to classify all Twitter accounts to four categorties: 
