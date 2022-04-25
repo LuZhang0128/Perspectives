@@ -5,7 +5,7 @@ The [code](https://github.com/LuZhang0128/Perspectives/blob/main/Collected%20dat
 All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
 
 # Dependencies
-All the dependency (required packages) are in the `Import Packages` section, and is also listed below:
+All the dependency (required packages) are in the `Import Packages` section in Google Colab, and is also listed below:
 
 ```
 !pip install -U git+http://github.com/UChicago-Computational-Content-Analysis/lucem_illud.git --quiet
