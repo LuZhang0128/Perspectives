@@ -47,6 +47,13 @@ In this section, I removed urls and uninformative information like websites and 
 
 The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1Szztx7LW-QGuvejjWfl9eea9oJ_whtFQ/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
+# Basic Data Description
+In this sampled dataset, there are in total 123517 observations. 
+<br>
+
+The distribution of number of tweets per day is as below:
+![](https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png | width=100)
+
 # Machine Learning Model for Classification
 I will train a supervised machine learning model to classify all Twitter accounts to four categorties: 
 1) Social Movement Organization (SMO)
@@ -58,6 +65,7 @@ Three individual research assistants and I are currently labelling the training 
 
 The training of the machine learning model will later be updated in the Google Colab code, under the `Classification Model` section.
 
-# 
+# Emotion Classification Before and After the Event
+Since
 
 
