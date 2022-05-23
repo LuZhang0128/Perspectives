@@ -103,7 +103,7 @@ I trained four supervised machine learning models to classify all Twitter accoun
 Three individual research assistants and I are currently labelling the training dataset. The manually labelled data (in progress) can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Re-t0Tc7OLDYzt5cJWZcztvwllyMw3mzOWhXoOYnnQM/edit?usp=sharing). One Twitter account is at least coded by two people. Any discrepancies are checked and resolved by a thrid people. <br>
 
 The distribution of the manually labeled data is plotted in R-studio using [this code](https://github.com/LuZhang0128/Perspectives/blob/main/label_distribution.Rmd) and is as follows: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/labeled_distribution.png" width=40% height=40%> 
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/labeled_distribution.png" width=60% height=60%> 
 <br>
 
 There are 55 (12%) Social Movement Organizations, 67 (15%) Other Organizations, 84 (19%) Social Movement Activists, and 244 (54%) Other Individuals. Most accounts are everyday people. These 450 accounts are responsible for 3,566 (2.89%) tweets among all 123,517 tweets. <br>
@@ -111,9 +111,9 @@ There are 55 (12%) Social Movement Organizations, 67 (15%) Other Organizations, 
 The trainings of the four machine learning model (Random Forest Classifier, Logistic Regression, Support Vector Classification (SVC), and Multinomial Naïve Bayes algorithm) are in the Google Colab code, under the `Machine Learning Model` section. <br>
 
 The Confusion Matrices are of the models are: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matrices%20.png" width=40% height=40%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matrices%20.png" width=60% height=60%> <br>
 and the accuracy scores are: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores%20.png" width=40% height=40%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores%20.png" width=60% height=60%> <br>
 
 The confusion matrices show that all four models experience high errors when differentiating SMOs’ accounts from Individual Activists’ accounts. When the true label is 3 (Social Movement Activists), the models are more likely to falsely classify it as SMO than the other two categories. Meanwhile, the models can tell Individual Activists apart from everyday people. When the true label is 4 (Other Individual), the model is doing a good job doing the classification. The error rates of classifying them into other three categories are similar, meaning that the model did not find significantly higher seminaries between everyday people and individual activists. <br>
 Based on the accuracy scores, the Random Forest classifier achieved the highest accuracy score. However, all four models have better performance on the training sets compared to the testing sets. This suggests over-fitting of the models. The accuracy scores on the testing sets are around 70%. <br>
