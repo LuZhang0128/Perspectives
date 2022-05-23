@@ -1,0 +1,48 @@
+---
+title: "labeling"
+author: "Lu Zhang"
+date: "5/15/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+df <- read.csv("~/Desktop/master thesis/Perspectives_Labelling.csv")
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+df1 <- df[, 0:5]
+df1[is.na(df1)] <- 0
+df_plot <- df1 %>% 
+  pivot_longer(-account) %>%
+  mutate(value = factor(value)) %>%
+  filter(value != 0)
+
+df_plot$name<- as.factor(df_plot$name)
+
+levels(df_plot$name)[levels(df_plot$name)=="social_movement_organization"] <- "Social Movement Organization"
+levels(df_plot$name)[levels(df_plot$name)=="other_organization"] <- "Other Organization"
+levels(df_plot$name)[levels(df_plot$name)=="social_movement_activist"] <- "Social Movement Activist"
+levels(df_plot$name)[levels(df_plot$name)=="other_individual"] <- "Other Individual"
+
+df_plot %>%
+  ggplot(aes(factor(name), fill=value)) +
+  geom_bar() +
+  geom_text(stat='count', aes(label=..count..), vjust=-1)+
+  scale_fill_manual(values=c('grey30'))+
+  xlab('')+
+  ylab('Number of Accounts')+
+  theme_bw()+
+  theme(panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.border=element_blank(),
+        axis.line=element_line(),
+        legend.title=element_blank(),
+        legend.position="none")
+```
+
