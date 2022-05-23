@@ -79,8 +79,7 @@ The distribution of number of tweets per day is as below: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/number_of_posts_per_day.png" width=60% height=60%>
 <br>
 
-This plot, however, does not necessarily reflect the true distribution of posts. After 2016, the number of posts is more likely to be limited by the algorithm instead of telling us the true trend. If we want to study the trend, [Google Trend](https://trends.google.com/trends/explore?date=2007-12-31%202022-04-24&geo=US&q=blacklivesmatter) is an alternative source.
-<br>
+This plot, however, does not necessarily reflect the true distribution of posts. After 2016, the number of posts is more likely to be limited by the algorithm instead of telling us the true trend. This limitation, on the other hand, empirically demonstrated the statement that the BlackLivesMatter movement became global only after 2016. If we want to study the trend, [Google Trend](https://trends.google.com/trends/explore?date=2007-12-31%202022-04-24&geo=US&q=blacklivesmatter) is an alternative source. <br>
 
 ### WordClouds
 The wordcloud generated using all tweets in the sampled dataset as below: <br>
@@ -116,20 +115,21 @@ and the accuracy scores are: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores%20.png" width=60% height=60%> <br>
 
 The confusion matrices show that all four models experience high errors when differentiating SMOs’ accounts from Individual Activists’ accounts. When the true label is 3 (Social Movement Activists), the models are more likely to falsely classify it as SMO than the other two categories. Meanwhile, the models can tell Individual Activists apart from everyday people. When the true label is 4 (Other Individual), the model is doing a good job doing the classification. The error rates of classifying them into other three categories are similar, meaning that the model did not find significantly higher seminaries between everyday people and individual activists. <br>
+
 Based on the accuracy scores, the Random Forest classifier achieved the highest accuracy score. However, all four models have better performance on the training sets compared to the testing sets. This suggests over-fitting of the models. The accuracy scores on the testing sets are around 70%. <br>
 
 # Emotion Classification
-Since I haven't finished the classification model, I can only examine the emotion display of all Twitter accounts. Like the word clouds, I look at emotions as a whole, and emotions before and after the event. I used the NRCLex package, which is a dictionary-based emotional classification algorithm. Later, I will also consider using a neural-network-based algorithm to achieve higher classification accuracy. The emotion classifications can be reproduced by running the `Emotion Classification Before and After the Event` section in Google Colab code. 
+Due to the over-fitting problem, the classification of the rest of the accounts would be inaccurate. Thus, I decided not to delve down to examine the behavior patterns of each type of account until more accounts are manually labeled. In this study, I would only look at the general emotion trends in the public discursive field before and after the death of George Floyd using all tweets. <br>
+
+I implemented a roBERTa-base model pre-trained on around 58 million tweets and finetuned for emotion recognition with TweetEval benchmark. This model is suitable for labeling tweets with four different emotions: Joy, Sadness, Optimism, and Anger. The model returns a score for each emotion, with 1 meaning the highest score and 0 meaning the lowest score. I then calculate an average score for each day. The implementaion code and the regressions that will be discussed later can be found in the the Google Colab code under the 'Pre-trained BERT model for Emotion Classification' section. <br>
+
+Based on data distribution figure and the discussions above, the BlackLivesMatter movement did not get enough attention from the public before 2016. The following graph also shows that the emotional scores before 2016 are messy, especially for joy and anger, aligning with the previous statement. Thus, I decided to focus only on data after 2016. I performed two separate linear regressions for each of the four emotions before and after the death of George Floyd. <br>
+
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/average_joy_score_per_day.png.png" width=40% height=40%> <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/average_optimism_score_per_day.png.png" width=40% height=40%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/average_anger_score_per_day.png" width=40% height=40%> <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/average_sadness_score_per_day.png.png" width=40% height=40%> <br>
 <br>
 
-The emotion classification generated using all Twitter accounts in the sampled dataset as below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emotion_all_count.png" width=60% height=60%> <br>
-The wordcloud generated using all Twitter accounts before (up) and after (down)the death of George Floyd (2020-05-25) are as below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_before_percentage.png" width=60% height=60%> 
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/emtion_after_percentage.png" width=60% height=60%> 
-<br>
-
-From the plots above, we can see that both the percentage of `fear` words and `anger` words decrease after the death of George Floyd. This finding is counterintuitive and is different from Bail's conclusion about Fringe Effect, that organizations tend to display fearful and angry words to attract public's attention). After further splitting the accounts, I want to see if this emotion classification results will be different for Social Movement Organization (SMO), Other Organization, Social Movement Activists, and Other Individuals.
+There are observed significant jump discontinuities between the regressions. For joy and optimism, there is a sudden increase in scores after the event. The scores gradually decrease almost back to the original level. Similarly, there is a sharp drop in scores for anger and sadness after the event, and the scores gradually increase almost back to the original level. The regression lines' slopes after the event are steeper than those before the event. <br>
 
 # Cite this Repository
 You can cite this repository via the doi on the very top of the README file.
