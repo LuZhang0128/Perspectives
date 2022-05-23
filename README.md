@@ -5,7 +5,7 @@ The code and data in this repository is for the Perspectives Class Project, Spri
 
 The purpose of this class project is to evaluate the Fringe Effect of Social Movement Organizations (SMOs) in Online Social Movements. More specifically, I want to study the BlackLivesMatter movement, and see how SMOs' popularies and display of emotion changed after the death of George Floyd.
 
-The [code](https://github.com/LuZhang0128/Perspectives/blob/main/Collected%20data%20and%20initial%20findings.ipynb) is written in Python 3.7 on Google Colab. <br>
+The [code](https://github.com/LuZhang0128/Perspectives/blob/main/analysis.ipynb) is written in Python 3.7 on Google Colab. <br>
 All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
 
 # Dependencies
@@ -15,23 +15,42 @@ All the dependency (required packages) are in the `Import Packages` section in G
 !pip install -U git+http://github.com/UChicago-Computational-Content-Analysis/lucem_illud.git --quiet
 !pip install NRCLex --quiet
 !pip install -U kaleido --quiet
+!pip install transformers --quiet
+!pip install imbalanced-learn --quiet
+import imblearn
 import pandas as pd
 import re
 import nltk
 nltk.download('punkt')
 import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
 import wordcloud
 import spacy
 import gensim
 import numpy as np 
-import seaborn 
+import seaborn as sns
 import sklearn.metrics.pairwise 
 import sklearn.manifold 
 import sklearn.decomposition 
 import lucem_illud
-import plotly.express as px
+import datetime as dt
+import pandas as pd
+import lucem_illud
+import math
+import sklearn.feature_extraction.text
+import sklearn.feature_extraction
+from sklearn.metrics import plot_confusion_matrix, plot_roc_curve
+import matplotlib.pyplot as plt
+import gensim
+import wordcloud
 from lucem_illud.processing import normalizeTokens, trainTestSplit, word_tokenize, sent_tokenize
 from nrclex import NRCLex
+from transformers import AutoModelForSequenceClassification
+from transformers import TFAutoModelForSequenceClassification
+from transformers import AutoTokenizer
+from scipy.special import softmax
+import csv
+import urllib.request
 
 %matplotlib inline
 ```
@@ -75,17 +94,31 @@ It is interesting to see words such as "wildhorse," "wild," "horse," and "land" 
 
 
 # Machine Learning Model for Classification
-I will train a supervised machine learning model to classify all Twitter accounts to four categorties: 
+I trained four supervised machine learning models to classify all Twitter accounts to four categorties: 
 1) Social Movement Organization (SMO)
 2) Other Organization
 3) Social Movement Activists
 4) Other Individuals
 
-Three individual research assistants and I are currently labelling the training dataset. The manually labelled data (in progress) can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Re-t0Tc7OLDYzt5cJWZcztvwllyMw3mzOWhXoOYnnQM/edit?usp=sharing). One Twitter account will be at least coded by two people. Any discrepancies will be checked and resolved by a thrid people. 
+Three individual research assistants and I are currently labelling the training dataset. The manually labelled data (in progress) can be found in [this spreadsheet](https://docs.google.com/spreadsheets/d/1Re-t0Tc7OLDYzt5cJWZcztvwllyMw3mzOWhXoOYnnQM/edit?usp=sharing). One Twitter account is at least coded by two people. Any discrepancies are checked and resolved by a thrid people. <br>
 
-The training of the machine learning model will later be updated in the Google Colab code, under the `Classification Model` section.
+The distribution of the manually labeled data is plotted in R-studio using [this code](https://github.com/LuZhang0128/Perspectives/blob/main/label_distribution.Rmd) and is as follows: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/labeled_distribution.png" width=40% height=40%> 
+<br>
 
-# Emotion Classification Before and After the Event
+There are 55 (12%) Social Movement Organizations, 67 (15%) Other Organizations, 84 (19%) Social Movement Activists, and 244 (54%) Other Individuals. Most accounts are everyday people. These 450 accounts are responsible for 3,566 (2.89%) tweets among all 123,517 tweets. <br>
+
+The trainings of the four machine learning model (Random Forest Classifier, Logistic Regression, Support Vector Classification (SVC), and Multinomial Naïve Bayes algorithm) are in the Google Colab code, under the `Machine Learning Model` section. <br>
+
+The Confusion Matrices are of the models are: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matrices%20.png" width=40% height=40%> <br>
+and the accuracy scores are: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores%20.png" width=40% height=40%> <br>
+
+The confusion matrices show that all four models experience high errors when differentiating SMOs’ accounts from Individual Activists’ accounts. When the true label is 3 (Social Movement Activists), the models are more likely to falsely classify it as SMO than the other two categories. Meanwhile, the models can tell Individual Activists apart from everyday people. When the true label is 4 (Other Individual), the model is doing a good job doing the classification. The error rates of classifying them into other three categories are similar, meaning that the model did not find significantly higher seminaries between everyday people and individual activists. <br>
+Based on the accuracy scores, the Random Forest classifier achieved the highest accuracy score. However, all four models have better performance on the training sets compared to the testing sets. This suggests over-fitting of the models. The accuracy scores on the testing sets are around 70%. <br>
+
+# Emotion Classification
 Since I haven't finished the classification model, I can only examine the emotion display of all Twitter accounts. Like the word clouds, I look at emotions as a whole, and emotions before and after the event. I used the NRCLex package, which is a dictionary-based emotional classification algorithm. Later, I will also consider using a neural-network-based algorithm to achieve higher classification accuracy. The emotion classifications can be reproduced by running the `Emotion Classification Before and After the Event` section in Google Colab code. 
 <br>
 
