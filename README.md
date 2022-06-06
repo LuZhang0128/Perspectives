@@ -66,9 +66,9 @@ There are 55 (12%) Social Movement Organizations, 67 (15%) Other Organizations, 
 The trainings and hyperparameter tuning of the four machine learning model (Random Forest Classifier, Logistic Regression, Support Vector Classification (SVC), and Multinomial Naïve Bayes algorithm) are in the Google Colab code, under the `Machine Learning Model` section. <br>
 
 The Confusion Matrices are of the models are: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matrices%20.png" width=60% height=60%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matricies.png" width=60% height=60%> <br>
 and the accuracy scores are: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores%20.png" width=60% height=60%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/accuracy_scores.png" width=60% height=60%> <br>
 
 The confusion matrices show that all four models experience high errors when differentiating SMOs’ accounts from Individual Activists’ accounts. When the true label is 3 (Social Movement Activists), the models are more likely to falsely classify it as SMO than the other two categories. Meanwhile, the models can tell Individual Activists apart from everyday people. When the true label is 4 (Other Individual), the model is doing a good job doing the classification. The error rates of classifying them into other three categories are similar, meaning that the model did not find significantly higher seminaries between everyday people and individual activists. <br>
 
@@ -98,7 +98,7 @@ I performed OLS linear regressions between the number of Likes and each of the f
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/anger_num_like.png" width=40% height=40%> <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/sadness_num_like.png" width=40% height=40%> <br>
 <br>
 
-Detailed statistics of the regression models are:
+Detailed statistics of the regression models are: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/table.png" width=60% height=60%> <br>
 
 The regressions show a statistically significant negative correlation between Joy and Optimism scores and the number of Likes (after the log(x+1) transformation) for tweets. Meanwhile, there is a statistically significant positive correlation between Anger and Sadness scores and the number of Likes (after the log(x+1) transformation) for tweets. The absolute numbers of coefficients after the identified event are larger than those before the event, suggesting that a unit increase in the displayed emotion can lead to a greater number of Likes after the event. In other words, extreme emotion can attract more attention after George Floyd’s death than before.
