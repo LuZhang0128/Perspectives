@@ -9,51 +9,7 @@ The [code](https://github.com/LuZhang0128/Perspectives/blob/main/analysis.ipynb)
 All data used in this project, as well as the saved outputs, can be found [in this folder](https://drive.google.com/drive/folders/1Y1267sa7shpWpW31RBivD_CmDNQ07AeC?usp=sharing). 
 
 # Dependencies
-All the dependency (required packages) are in the `Import Packages` section in Google Colab code, and is also listed below:
-
-```
-!pip install -U git+http://github.com/UChicago-Computational-Content-Analysis/lucem_illud.git --quiet
-!pip install NRCLex --quiet
-!pip install -U kaleido --quiet
-!pip install transformers --quiet
-!pip install imbalanced-learn --quiet
-import imblearn
-import pandas as pd
-import re
-import nltk
-nltk.download('punkt')
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import wordcloud
-import spacy
-import gensim
-import numpy as np 
-import seaborn as sns
-import sklearn.metrics.pairwise 
-import sklearn.manifold 
-import sklearn.decomposition 
-import lucem_illud
-import datetime as dt
-import pandas as pd
-import lucem_illud
-import math
-import sklearn.feature_extraction.text
-import sklearn.feature_extraction
-from sklearn.metrics import plot_confusion_matrix, plot_roc_curve
-import matplotlib.pyplot as plt
-import gensim
-import wordcloud
-from lucem_illud.processing import normalizeTokens, trainTestSplit, word_tokenize, sent_tokenize
-from nrclex import NRCLex
-from transformers import AutoModelForSequenceClassification
-from transformers import TFAutoModelForSequenceClassification
-from transformers import AutoTokenizer
-from scipy.special import softmax
-import csv
-import urllib.request
-
-%matplotlib inline
-```
+All the dependency (required packages) are in the `Import Packages` section in Google Colab code, and are also listed in the [package_dependencies.rtf](https://github.com/LuZhang0128/Perspectives/blob/main/package_dependencies.rtf). Note that when running the Google Colab code, there will be warnings and errors due to internal conflicts within packages. This conflict would not impact further codes and analysis. 
 
 # Load and Clean Data
 I've collaborated with my friend and have written a scraper for Twitter data. I am currently unable to share the scraper with the class.
@@ -130,6 +86,12 @@ Based on data distribution figure and the discussions above, the BlackLivesMatte
 <br>
 
 There are observed significant jump discontinuities between the regressions. For joy and optimism, there is a sudden increase in scores after the event. The scores gradually decrease almost back to the original level. Similarly, there is a sharp drop in scores for anger and sadness after the event, and the scores gradually increase almost back to the original level. The regression lines' slopes after the event are steeper than those before the event. <br>
+
+# Emotion and Popularity
+There I used the number of Likes for each post as a proxy of the popularity of that post. The distribution of the number of Likes and the zoomed-in visualization are presented below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/dis_num_like.png" width=40% height=40%> <br>
+
+
 
 # Cite this Repository
 You can cite this repository via the doi on the very top of the README file.
