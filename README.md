@@ -27,7 +27,7 @@ In this section, I removed urls and uninformative information like websites and 
 The pre-processed data can be found [here in csv](https://drive.google.com/file/d/1Szztx7LW-QGuvejjWfl9eea9oJ_whtFQ/view?usp=sharing) or [here in pkl](https://drive.google.com/file/d/1bhXF7WidraR3qkpzv9giXaR5WZGov78k/view?usp=sharing). 
 
 # Basic Data Description
-In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds. The distribution can be reproduced by running the `Basic Plots` section in Google Colab code, and the wordclouds can be reproduced by running the `Word Cloud` section in Google Colab code. Note that this basic description only get people to know the dataset better, and is not related to the final answer to the research question.
+In this sampled dataset, there are in total 123517 observations. Let's get a quick look at the distribution of the data, as well as the wordclouds. The distribution and word clouds can be reproduced by running the `Basic Plots` section in Google Colab code. Note that this basic description only get people to know the dataset better, and is not related to the final answer to the research question.
 <br>
 
 ### Distribution
@@ -49,7 +49,7 @@ It is interesting to see words such as "wildhorse," "wild," "horse," and "land" 
 
 
 # Machine Learning Model for Classification
-I trained four supervised machine learning models to classify all Twitter accounts to four categorties: 
+I trained four supervised machine learning models to classify all Twitter accounts to four categorties using grid-serach for hyper parameter tuning: 
 1) Social Movement Organization (SMO)
 2) Other Organization
 3) Social Movement Activists
@@ -63,7 +63,7 @@ The distribution of the manually labeled data is plotted in R-studio using [this
 
 There are 55 (12%) Social Movement Organizations, 67 (15%) Other Organizations, 84 (19%) Social Movement Activists, and 244 (54%) Other Individuals. Most accounts are everyday people. These 450 accounts are responsible for 3,566 (2.89%) tweets among all 123,517 tweets. <br>
 
-The trainings of the four machine learning model (Random Forest Classifier, Logistic Regression, Support Vector Classification (SVC), and Multinomial Naïve Bayes algorithm) are in the Google Colab code, under the `Machine Learning Model` section. <br>
+The trainings and hyperparameter tuning of the four machine learning model (Random Forest Classifier, Logistic Regression, Support Vector Classification (SVC), and Multinomial Naïve Bayes algorithm) are in the Google Colab code, under the `Machine Learning Model` section. <br>
 
 The Confusion Matrices are of the models are: <br>
 <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/confusion_matrices%20.png" width=60% height=60%> <br>
@@ -88,10 +88,20 @@ Based on data distribution figure and the discussions above, the BlackLivesMatte
 There are observed significant jump discontinuities between the regressions. For joy and optimism, there is a sudden increase in scores after the event. The scores gradually decrease almost back to the original level. Similarly, there is a sharp drop in scores for anger and sadness after the event, and the scores gradually increase almost back to the original level. The regression lines' slopes after the event are steeper than those before the event. <br>
 
 # Emotion and Popularity
-There I used the number of Likes for each post as a proxy of the popularity of that post. The distribution of the number of Likes and the zoomed-in visualization are presented below: <br>
-<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/dis_num_like.png" width=40% height=40%> <br>
+There I used the number of Likes for each post as a proxy of the popularity of that post to test the relationship between emotion and tweets' popularity. You can run the `Popularity and Emotion` section in Google Colab to replicate the anlaysis. The distribution of the number of Likes and the zoomed-in visualization are presented below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/dis_num_like.png" width=60% height=60%> <br>
 
+Out of the 123,517 tweets in the dataset, 113,383 tweets (91.80%) received less than 100 Likes, with a mean of 1,174 Likes and a median of 2 Likes. 37,122 tweets (30.05%) received 0 Likes. Since the data is right-skewed, I applied the log(x+1) transformation on the data to achieve a relatively normalized data for later Ordinary Least Square (OLS) linear regressions. <br>
 
+I performed OLS linear regressions between the number of Likes and each of the four emotions before and after the identified event (George Floyd’s death). The visualizations are presented below: <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/joy_num_like.png" width=40% height=40%> <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/optimism_num_like.png" width=40% height=40%> <br>
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/anger_num_like.png" width=40% height=40%> <img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/sadness_num_like.png" width=40% height=40%> <br>
+<br>
+
+Detailed statistics of the regression models are:
+<img src="https://github.com/LuZhang0128/Perspectives/blob/main/figs/table.png" width=60% height=60%> <br>
+
+The regressions show a statistically significant negative correlation between Joy and Optimism scores and the number of Likes (after the log(x+1) transformation) for tweets. Meanwhile, there is a statistically significant positive correlation between Anger and Sadness scores and the number of Likes (after the log(x+1) transformation) for tweets. The absolute numbers of coefficients after the identified event are larger than those before the event, suggesting that a unit increase in the displayed emotion can lead to a greater number of Likes after the event. In other words, extreme emotion can attract more attention after George Floyd’s death than before.
 
 # Cite this Repository
 You can cite this repository via the doi on the very top of the README file.
